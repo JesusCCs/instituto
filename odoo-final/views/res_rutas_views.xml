@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_rutas_tree" model="ir.ui.view">
+            <field name="name">space_travel.ruta.tree</field>
+            <field name="model">space_travel.ruta</field>
+            <field name="arch" type="xml">
+                <tree string="Rutas">
+                    <field name="name"/>
+                    <field name="origen"/>
+                    <field name="destino"/>
+                    <field name="nave"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rutas_form" model="ir.ui.view">
+            <field name="name">space_travel.ruta .form</field>
+            <field name="model">space_travel.ruta</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Ruta">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="name" default_focus="1" placeholder="Ruta Marte-Tierra"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="origen"/>
+                                <field name="destino"/>
+                            </group>
+                            <group>
+                                <field name="nave"/>
+                                <field name="currency_id"/>
+                                <field name="precio"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

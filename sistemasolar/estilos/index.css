@@ -1,0 +1,206 @@
+html,
+body {
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: radial-gradient(rgb(41, 54, 70) 0%, rgb(10, 23, 37) 100%);
+            font-family: Manrope;
+        }
+
+        .sistema-solar div {
+            /*con esto redondeamos los div para formar circulos, 
+            tendrá que ser al menos la mitad del tamaño de orbita más grande*/
+            border-radius: 400px;
+            top: 43%;
+            left: 46%;
+            position: absolute;
+        }
+
+        /*dibujamos las sombras*/
+        .sistema-solar div:before {
+            box-shadow: inset 0 6px 0 -2px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /*con esto creamos las órbitas*/
+        .planeta {
+            border: 1px solid rgba(255, 255, 255, 0.144);
+        }
+
+
+        /*aquí simulamos los planetas en la órbita*/
+        .planeta:before {
+            left: 45%;
+            border-radius: 100px;
+            content: "";
+            position: absolute;
+        }
+
+        .sol {
+            background: radial-gradient(#f1c943 1%, #f1c943 49%, #f5bf0f 100%);
+            height: 120px;
+            width: 120px;
+            box-shadow: 0 0 12px 5px rgba(255, 196, 0, 0.4), 0 0 26px 16px rgba(255, 203, 0, 0.13);
+        }
+
+        /*especificamos el tamaño y la posición de la órbita y animamos*/
+        .mercurio {
+            height: 185px;
+            width: 185px;
+            margin-top: -33px;
+            margin-left: -33.5px;
+            animation: rotar 11.6s linear infinite;
+        }
+
+        /*aquí colocamos el planeta en la órbita, le damos tamaño y color. Será un método equivalente para el resto*/
+        .mercurio:before {
+            height: 10px;
+            width: 10px;
+            background: #838280;
+            margin-top: -4.4px;
+        }
+
+        .venus {
+            height: 280px;
+            width: 280px;
+            margin-top: -80px;
+            margin-left: -80px;
+            animation: rotar 22.47s linear infinite;
+        }
+
+        .venus:before {
+            height: 20px;
+            width: 20px;
+            background: #d69718;
+            margin-top: -10px;
+        }
+
+        .tierra {
+            height: 430px;
+            width: 430px;
+            margin-top: -153.5px;
+            margin-left: -152.5px;
+            /*haremos que sea 0.1s por día, luego pondremos que la Tierra tarde 36.5s en dar una vuelta.
+              El resto de animaciones se calcula siguiendo el mismo patrón*/
+            animation: rotar 36.5s linear infinite;
+        }
+
+        .tierra:before {
+            height: 22px;
+            width: 22px;
+            background: rgb(36, 137, 219);
+            margin-top: -10px;
+        }
+
+        /*si lo anterior nos sirve para el planeta, esto nos servirá para la luna*/
+        .tierra:after {
+            /*parte de la órbita*/
+            position: absolute;
+            left: 50%;
+            top: -12px;
+            content: "";
+            border-radius: 200px;
+            height: 40px;
+            margin-left: -19px;
+            margin-top: -6px;
+            /*parte del cuerpo*/
+            width: 20px;
+            box-shadow: 0 -10px 0 -8px grey;
+            animation: rotar 2.7s linear infinite;
+        }
+
+        .marte {
+            height: 640px;
+            width: 640px;
+            margin-top: -255px;
+            margin-left: -255px;
+            animation: rotar 68.6s linear infinite;
+        }
+
+        .marte:before {
+            height: 16px;
+            width: 16px;
+            background: red;
+            margin-top: -8.5px;
+        }
+
+        /*aquí construimos la animación*/
+        @keyframes rotar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /*TITULO*/
+
+        header {
+            position: absolute;
+            left: 50%;
+            margin-top: 2%;
+        }
+
+        header h1 {
+            position: relative;
+            left: -50%;
+            font-weight: lighter;
+            font-size: 30px;
+            letter-spacing: 4px;
+            color: rgba(230, 230, 230, 0.9);
+        }
+
+        /*NAVEGACIÓN*/
+
+        nav{
+            position: absolute;
+            left: 50%;;
+            bottom: 30px;
+            width: 30%;
+        }
+        
+        ul{
+            position: relative;
+            left: -50%;
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: rgba(203, 204, 209);
+            letter-spacing: 2.5px;
+            opacity: 0.5;
+        }
+
+        a:hover{
+            opacity: 1;
+        }
+
+        #venus{
+            cursor: pointer;
+        }
+
+        /*UTILIDADES PARA EL JS*/
+
+        .resaltar {
+            border: 1px solid rgba(255, 255, 255, 0.582);
+            box-shadow: 0 2px 5px rgba(221, 220, 220, 0.795);
+        }
+
+        .resaltar-sol{
+            box-shadow: 0 0 12px 5px rgba(255, 196, 0, 0.4), 0 0 34px 16px rgba(255, 204, 0, 0.24);
+        }
+
+        .escondido {
+            display: none;
+        }
+

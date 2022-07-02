@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <report id="space_travel.report_planeta"
+                model="space_travel.planeta"
+                string="Informe del planeta"
+                name="space_travel.report_planeta_view"
+                file="space_travel.report_planeta_view"
+                report_type="qweb-html"/>
+
+        <template id="report_planeta_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="planeta">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="planeta.nombre"/>
+                            <div class="row">
+                                <div class="col-3">
+                                    <img t-attf-src="data:image/*;base64,{{planeta.imagen}}"
+                                         style="max-height:330px; max-width:330px;"/>
+                                </div>
+
+                                <div class="col-8">
+                                    <div>
+                                        <strong>Identificación:</strong>
+                                        <span t-field="planeta.name"/>
+                                    </div>
+
+                                    <div style="margin-top:4px">
+                                        <strong>Colonizado:</strong>
+                                        <t t-if="planeta.colonizado">
+                                            <input type="checkbox" checked="checked" readonly="readonly"/>
+                                        </t>
+                                        <t t-if="not planeta.colonizado">
+                                            <input type="checkbox" readonly="readonly"/>
+                                        </t>
+                                    </div>
+
+                                    <div style="margin-top:10px">
+                                        <div><strong>Descripción</strong></div>
+                                        <div><span t-field="planeta.descripcion"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>

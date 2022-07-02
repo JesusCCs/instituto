@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="DTO.ProductosDTO" table="productos" schema="bd_neptuno2">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="producto">
+            <column name="producto" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="cantidadPorUnidad">
+            <column name="cantidad_por_unidad" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="precioUnidad">
+            <column name="precio_unidad" sql-type="decimal(19,4)" precision="19" scale="4" not-null="true"/>
+        </property>
+        <property name="unidadesExistencia">
+            <column name="unidades_existencia" sql-type="smallint(6)" not-null="true"/>
+        </property>
+        <property name="unidadesPedido">
+            <column name="unidades_pedido" sql-type="smallint(6)" not-null="true"/>
+        </property>
+        <property name="nivelNuevoPedido">
+            <column name="nivel_nuevo_pedido" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="suspendido">
+            <column name="suspendido" sql-type="tinyint(1)"/>
+        </property>
+        <property name="notas">
+            <column name="notas" sql-type="text" not-null="true"/>
+        </property>
+        <property name="iva">
+            <column name="iva" sql-type="decimal(14,2)" precision="14" scale="2"/>
+        </property>
+        <many-to-one name="proveedor" class="DTO.ProveedoresDTO">
+            <column name="proveedor_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="categoria" class="DTO.CategoriasDTO">
+            <column name="categoria_id" not-null="true"/>
+        </many-to-one>
+        <set name="detalles" inverse="true">
+            <key>
+                <column name="producto_id"/>
+            </key>
+            <one-to-many not-found="ignore" class="DTO.DetallesDTO"/>
+        </set>
+    </class>
+</hibernate-mapping>

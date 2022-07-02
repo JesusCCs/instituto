@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="space_travel_planeta_kanban_view">
+            <field name="name">space_travel.planeta.kanban</field>
+            <field name="model">space_travel.planeta</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="colonizado"/>
+                    <field name="nombre"/>
+                    <field name="imagen"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                                <t t-set="placeholder" t-value="'/space_travel/static/img/placeholder.jpg'"/>
+                                <div class="o_kanban_image_fill_left o_kanban_image_full"
+                                     t-attf-style="background-image: url(#{kanban_image('space_travel.planeta', 'imagen', record.id.raw_value, placeholder)});margin-left:2px"
+                                     role="img"/>
+
+                                <div class="oe_kanban_details d-flex flex-column">
+                                    <strong class="o_kanban_record_title oe_partner_heading">
+                                        <field name="nombre"/>
+                                    </strong>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <ul>
+                                        <li> Colonización: <t t-if="record.colonizado.raw_value">Sí</t><t t-if="!record.colonizado.raw_value">No</t></li>
+                                        <li><field name="name"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_planetas_tree" model="ir.ui.view">
+            <field name="name">space_travel.planeta.tree</field>
+            <field name="model">space_travel.planeta</field>
+            <field name="arch" type="xml">
+                <tree string="Planetas">
+                    <field name="name"/>
+                    <field name="nombre"/>
+                    <field name="colonizado"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_planetas_form" model="ir.ui.view">
+            <field name="name">space_travel.planeta.form</field>
+            <field name="model">space_travel.planeta</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Planeta">
+                    <sheet>
+                        <field name="imagen" widget='image' class="oe_avatar" options='{"preview_image": "imagen"}'/>
+                        <div class="oe_title">
+                            <h1><field name="nombre" default_focus="1" placeholder="Tierra"/></h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="colonizado"/>
+                                <field name="name" placeholder="Por ejemplo, Tierra0001"/>
+                            </group>
+                            <group>
+                                <field name="descripcion" widget="text" placeholder="Características principales del planeta"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

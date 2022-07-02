@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+nave_responsable,nave responsable,model_space_travel_nave,space_travel_manager,1,1,1,1
+planeta_responsable,planeta responsable,model_space_travel_planeta,space_travel_manager,1,1,1,1
+ruta_responsable,ruta responsable,model_space_travel_ruta,space_travel_manager,1,1,1,1
+viaje_responsable,viaje responsable,model_space_travel_viaje,space_travel_manager,1,1,1,1

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="DTO.CategoriasDTO" table="categorias" schema="bd_neptuno2">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="categoria">
+            <column name="categoria" sql-type="varchar(15)" length="15"/>
+        </property>
+        <property name="descripcion">
+            <column name="descripcion" sql-type="text" not-null="true"/>
+        </property>
+        <set name="productos" inverse="true">
+            <key>
+                <column name="categoria_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="DTO.ProductosDTO"/>
+        </set>
+    </class>
+</hibernate-mapping>

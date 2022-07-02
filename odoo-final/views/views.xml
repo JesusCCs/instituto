@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- Vista Principal Naves -->
+
+    <record model="ir.actions.act_window" id="space_travel.nave_action_window">
+        <field name="name">Flota</field>
+        <field name="res_model">space_travel.nave</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> Crea tu primera nave </p>
+            <p> Te ayudamos a mantener un registro de toda tu flota dedicada a los viajes </p>
+        </field>
+    </record>
+
+    <!-- Vista Principal Viajes -->
+
+    <record model="ir.actions.act_window" id="space_travel.viaje_action_window">
+        <field name="name">Viajes</field>
+        <field name="res_model">space_travel.viaje</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> No hay viajes programados </p>
+        </field>
+    </record>
+
+
+    <!-- Vista Principal Planetas -->
+
+    <record model="ir.actions.act_window" id="space_travel.planeta_action_window">
+        <field name="name">Planeta</field>
+        <field name="res_model">space_travel.planeta</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> Genera el primer planeta </p>
+            <p> Sea destino u origen, hay que empezar por algún sitio </p>
+        </field>
+    </record>
+
+
+    <!-- Vista Principal Rutas -->
+
+    <record model="ir.actions.act_window" id="space_travel.ruta_action_window">
+        <field name="name">Rutas</field>
+        <field name="res_model">space_travel.ruta</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> Sin rutas por el momento </p>
+        </field>
+    </record>
+
+
+    <!-- Menú -->
+
+    <menuitem name="Viajes Espaciales" id="menu_space_travel" groups="space_travel_manager" sequence="0"/>
+
+    <menuitem name="Flota" id="res_space_travel_menu_flota" action="space_travel.nave_action_window"
+              parent="menu_space_travel" groups="space_travel_manager"/>
+    <menuitem name="Viajes" id="res_space_travel_menu_viaje" action="space_travel.viaje_action_window"
+              parent="menu_space_travel" groups="space_travel_manager"/>
+
+    <menuitem name="Base" id="res_space_travel_menu_viajes" parent="menu_space_travel" groups="space_travel_manager"/>
+
+    <menuitem name="Planetas" id="menu_space_travel_planeta" action="space_travel.planeta_action_window"
+              parent="res_space_travel_menu_viajes" groups="space_travel_manager"/>
+    <menuitem name="Rutas" id="menu_space_travel_ruta" action="space_travel.ruta_action_window"
+              parent="res_space_travel_menu_viajes" groups="space_travel_manager"/>
+
+</odoo>

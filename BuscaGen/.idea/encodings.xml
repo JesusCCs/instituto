@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/Controlador.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/ControladorErrores.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/Fasta.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/componentes/AreaTexto.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/componentes/BotonContador.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/com/iespablopicasso/buscagen/componentes/InputFile.java" charset="windows-1252" />
+  </component>
+</project>

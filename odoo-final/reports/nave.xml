@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <report id="space_travel.report_nave"
+                model="space_travel.nave"
+                string="Informe de la Nave"
+                name="space_travel.report_nave_view"
+                file="space_travel.report_nave_view"
+                report_type="qweb-html"/>
+
+        <template id="report_nave_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="nave">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="nave.modelo"/>
+                            <div class="row">
+                                <div class="col-3">
+                                    <img t-attf-src="data:image/*;base64,{{nave.imagen}}"
+                                         style="max-height:330px; max-width:330px;"/>
+                                </div>
+
+                                <div class="col-8">
+                                    <div>
+                                        <strong>Categoría:</strong>
+                                        <span t-field="nave.name"/>
+                                    </div>
+
+                                    <div style="margin-top:4px">
+                                        <strong>Modelo:</strong>
+                                        <span t-field="nave.modelo"/>
+                                    </div>
+
+                                    <div style="margin-top:4px">
+                                        <strong>Número de pasajeros:</strong>
+                                        <span t-field="nave.num_pasajeros"/>
+                                    </div>
+
+                                    <div style="margin-top:4px">
+                                        <strong>Tipo de combustible:</strong>
+                                        <span t-field="nave.tipo_combustible"/>
+                                    </div>
+
+                                    <div style="margin-top:10px">
+                                        <div><strong>Descripción</strong></div>
+                                        <div><span t-field="nave.descripcion"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>

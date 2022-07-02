@@ -1,0 +1,134 @@
+  html{
+    overflow: hidden;
+    cursor: default;
+  }
+
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  #fondo{
+    position: absolute;
+    background: url("../img/venus_fondo.jpg") no-repeat center center fixed;
+    background-size: cover;
+    content: "";
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /*DIV PRINCIPAL*/
+
+  main {
+    margin-left: 25%;
+    position: absolute;
+    top: 15%;
+    bottom: 0;
+    min-width: 700px;
+    width: 50%;
+    background-image: linear-gradient(
+        rgb(0, 0, 0),
+        rgb(0, 0, 0),
+        rgba(0, 0, 0, 0.85)
+    );
+  }
+
+  /*BOTÓN DE CERRAR*/
+
+  #salir{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 5%;
+    height: 10%
+  }
+
+  #x{
+    position: relative;
+  }
+
+  #x:after{
+    content: "\d7";
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.801);
+    cursor: pointer;
+  }
+
+  #x:hover:after{
+    color: rgb(255, 255, 255);
+  }
+
+  /*TEXTO*/
+
+  #cuerpo{
+    margin: 0 10%;
+  }
+
+  h1{
+      margin-bottom: 5%;
+      font-family: Lato;
+      font-weight: lighter;
+      font-size: 4.5em;
+      color: rgba(255, 255, 255, 0.904);
+  }
+
+  #contenido{
+    height: 35vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /*modificamos el scrollbar para Firefox*/
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(245, 245, 245, 0.658) transparent;
+  }
+
+  /*modificamos el scrollbar para Chrome*/
+  #contenido::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  #contenido::-webkit-scrollbar-thumb {
+    background-color: rgba(122, 122, 122, 0.904);
+  }
+
+  .texto{
+      width: 47%;
+      float: left;
+      font-family: Lato;
+      
+  }
+
+  .texto h2{
+    color: rgba(255, 255, 255, 0.904);
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    margin-bottom: 3px;
+    margin-top: 5px;
+  }
+
+  .texto p{
+    color: rgba(211, 211, 211, 0.781);
+    font-size: 0.9em;
+    text-align: justify;
+    margin-bottom: 2px;
+  }
+
+  #contenido_1{
+      margin-right: 4%;
+  }
+
+
+  /*IMAGEN FINAL DEL DIV*/
+
+  #imagen{
+      position: absolute;
+      bottom: 0;
+  }
+
+  main img{
+    display: block;
+    width: 50%;
+    margin: auto;
+  }

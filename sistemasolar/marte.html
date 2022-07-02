@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Marte</title>
+    <link rel='stylesheet' href='estilos/marte.css'>
+    <link rel="stylesheet" href="estilos/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <nav class="nav escondido" id="nav-principal">
+        <ul id="nav-contenedor">
+            <div class="navegacion"><a class="hvr-underline-from-left" href="index.html">INICIO</a></div>
+            <div class="navegacion"><a class="hvr-underline-from-left" href="sol.html">SOL</a></div>
+            <div class="navegacion"><a class="hvr-underline-from-left" href="mercurio.html">MERCURIO</a></div>
+            <div class="navegacion"><a class="hvr-underline-from-left" href="venus.html">VENUS</a></div>
+            <div class="navegacion"><a class="hvr-underline-from-left" href="tierra.html">TIERRA</a></div>
+        </ul>
+    </nav>
+    <div id="nav-control" class="nav"><span>SISTEMA SOLAR INTERIOR</span></div>
+
+    <main>
+        <aside class="div-flecha">
+            <i class="flecha"></i>
+        </aside>
+        <aside class="datos" id="info-1">
+            <article>
+                <h2>SATÉLITES</h2>
+                <p>Fobos, Deimos</p>
+            </article>
+            <article>
+                <h2>RADIO</h2>
+                <p>3,390 Km</p>
+            </article>
+            <article>
+                <h2>DISTANCIA AL SOL</h2>
+                <p>227.9 millones de Km</p>
+            </article>
+            <article>
+                <h2>PERIODO ORBITAL</h2>
+                <p>687 días</p>
+            </article>
+        </aside>
+        <aside class="datos escondido" id="info-2">
+            <article>
+                <h2>ATMÓSFERA</h2>
+                <p>Se trata de una atmósfera muy tenue y coformada principalmente por CO<sub>2</sub> (95%)</p>
+            </article>
+            <article>
+                <h2>CLIMA</h2>
+                <p>
+                    Los cambios de temperatura, variaciones entre -60<span>&#8451;</span> y los
+                    20<span>&#8451;</span>, suelen ser bruscos,
+                    tanto en el tiempo como en el espacio,
+                    ocasionando fuertes vientos
+                </p>
+            </article>
+            <article>
+                <h2>COMPOSICIÓN</h2>
+                <p>La mayor parte de la superficie está compuesta por basalto, lo que le da su característico color
+                    rojo. En ambos polos del planeta se puede encontrar agua helada
+                </p>
+            </article>
+        </aside>
+    </main>
+
+    <div id="deimos">
+        <img src="img/marte_luna_1.PNG" alt="Deimos">
+    </div>
+    <div id="phobos">
+        <img src="img/marte_luna_2.PNG" alt="Phobos">
+    </div>
+
+
+
+    <div class="luna escondido" id="info-phobos">
+        <div class="imagen-contenedor">
+            <div class="imagen">
+                <img src="img/phobos.jpg" alt="Imagen de Fobos">
+            </div>
+        </div>
+        <div class="container">
+            <h4><b>Fobos</b></h4>
+            <p>Es un satélite con un radio de unos 11 Km, cuya particularidad más destacable es su cercanía a
+                Marte, orbitándo a unos 9000 Km de su superficie (la Luna orbita a a casi 400.000 Km). Esta cercanía
+                hace que tenga un periodo de escasas 7 horas y que en unos 60 u 80 millones de años temine por
+                colisionar con Marte o desintegrarse y formar un anillo de acreción alrededor de éste, puesto que la
+                fuerza de la gravedad del planeta hace que Fobos pierda cada vez más velocidad.
+            </p>
+        </div>
+    </div>
+
+    <div class="luna escondido" id="info-deimos">
+
+        <div class="imagen-contenedor">
+            <div class="imagen">
+                <img src="img/deimos.jpg" alt="Imagen de Deimos">
+            </div>
+        </div>
+        <div class="container">
+            <h4><b>Deimos</b></h4>
+            <p>Se trata de un satélite cuyo diámetro es de cien ordenes de magnitud menor que el de la Luna,
+                tratándose de uno de los satélites más pequeños que tienen nombre propio. Nombre que proviene de la
+                mitología griega, siendo Deimos el hijo de Ares, el dios equivalente a Marte en la romana, y hermano
+                gemelo de Fobos. Su origen
+                puede que sea la de un asteroide que quedó atrapado
+                por la gravedad marciana y su composición es la típica de éstos: roca rica en carbono e hielo.</p>
+        </div>
+    </div>
+
+    <script src="script/marte.js"></script>
+    <script src="script/nav.js"></script>
+</body>
+
+</html>

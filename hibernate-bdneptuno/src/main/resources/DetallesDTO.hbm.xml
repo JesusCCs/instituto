@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="DTO.DetallesDTO" table="detalles" schema="bd_neptuno2">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="precioUnidad">
+            <column name="precio_unidad" sql-type="decimal(19,4)" precision="19" scale="4" not-null="true"/>
+        </property>
+        <property name="cantidad">
+            <column name="cantidad" sql-type="smallint(6)" not-null="true"/>
+        </property>
+        <property name="descuento">
+            <column name="descuento" sql-type="double(7,2)" precision="7" scale="2" not-null="true"/>
+        </property>
+        <many-to-one name="pedido" class="DTO.PedidosDTO">
+            <column name="pedido_id"/>
+        </many-to-one>
+        <many-to-one name="producto" class="DTO.ProductosDTO">
+            <column name="producto_id"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

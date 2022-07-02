@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <report id="space_travel.report_ruta"
+                model="space_travel.ruta"
+                string="Informe de la ruta"
+                name="space_travel.report_ruta_view"
+                file="space_travel.report_ruta_view"
+                report_type="qweb-html"/>
+
+        <template id="report_ruta_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="ruta">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                           <h2 t-field="ruta.name"/>
+                            <div>
+                                <strong>Modelo:</strong>
+                                <span t-field="ruta.nave.modelo"/>
+                            </div>
+
+                            <div style="margin-top:4px">
+                                <strong>Origen:</strong>
+                                <span t-field="ruta.origen.nombre"/>
+                            </div>
+
+                            <div style="margin-top:4px">
+                                <strong>Destino:</strong>
+                                <span t-field="ruta.destino.nombre"/>
+                            </div>
+
+                            <div style="margin-top:4px">
+                                <strong>Precio:</strong>
+                                <span t-field="ruta.precio"/>
+                            </div>
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>

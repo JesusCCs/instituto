@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="space_travel_manager" model="res.groups">
+            <field name="name">Viajes / Administrador</field>
+        </record>
+    </data>
+</odoo>

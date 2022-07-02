@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <report id="space_travel.report_viaje"
+                model="space_travel.viaje"
+                string="Informe del Viaje"
+                name="space_travel.report_viaje_view"
+                file="space_travel.report_viaje_view"
+                report_type="qweb-html"/>
+
+        <template id="report_viaje_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="viaje">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="viaje.name"/>
+
+                            <div style="margin-top:4px">
+                                <strong>Fecha partida:</strong>
+                                <span t-field="viaje.fecha_partida"/>
+                            </div>
+
+                            <div style="margin-top:4px">
+                                <strong>Fecha llegada:</strong>
+                                <span t-field="viaje.fecha_llegada"/>
+                            </div>
+
+                            <div style="margin-top:4px">
+                                <strong>Ruta:</strong>
+                                <span t-field="viaje.ruta.name"/>
+                            </div>
+
+                            <div style="margin-top:4px">
+                                <strong>Viajero:</strong>
+                                <span t-field="viaje.viajero.display_name"/>
+                            </div>
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>
